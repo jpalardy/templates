@@ -1,0 +1,58 @@
+---
+pagetitle: "TITLE GOES HERE"
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(
+  fig.width=8,
+  fig.align="center",
+  fig.asp=0.618,
+  out.width="100%",
+  echo=FALSE,
+  comment=""
+)
+
+library(tidyverse)
+library(lubridate)
+library(scales)
+
+theme_set(
+  theme_bw() +
+  theme(
+    panel.grid.minor=element_blank()
+  )
+)
+
+```
+
+```{r loading-data, message=FALSE}
+
+# filename = commandArgs(TRUE) # a vector
+# filename = list.files(pattern="*.tsv") |> max()
+filename = "..."
+
+d <- read_tsv(filename, col_names=c("...", "...")  # => cols(...)
+
+d |> spec()
+d |> spec() |> cols_condense()
+
+d <- read_tsv(filename, col_names=c("...", "..."),
+       col_types=cols(
+         "..." = col_datetime(),
+         "..." = col_character(),
+         "..." = col_factor(),
+         "..." = col_number(),
+     )
+)
+
+```
+
+```{r}
+
+ggplot(d, aes(...)) +
+  geom_point() +
+  NULL
+
+```
+
