@@ -24,8 +24,7 @@ type alias Model =
 
 init : Model
 init =
-    { value = 0
-    }
+    { value = 0 }
 
 
 update : Msg -> Model -> Model
