@@ -1,12 +1,22 @@
 
-ELM_FILES = $(wildcard src/*.elm)
+ELMs = $(wildcard src/*.elm)
+OUTPUT = public/js/app.js
 
-public/js/app.js: $(ELM_FILES)
-	elm make $^ --output $@
+# -------------------------------------------------
 
+.PHONY: build
+build: $(OUTPUT)
+
+.PHONY: watch
 watch:
-	ls $(ELM_FILES) | entr -c -s 'make -s; ding'
+	ls $(ELMs) | entr -c -s 'make -s; ding'
 
+.PHONY: clean
 clean:
-	rm -rf public/js/app.js elm-stuff/
+	rm -rf elm-stuff/ $(OUTPUT)
+
+# -------------------------------------------------
+
+$(OUTPUT): $(ELMs)
+	elm make $^ --output $@
 
