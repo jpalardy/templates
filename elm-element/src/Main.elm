@@ -37,11 +37,6 @@ update msg model =
             ( { model | value = model.value - 1 }, Cmd.none )
 
 
-subscriptions : Model -> Sub Msg
-subscriptions _ =
-    Sub.none
-
-
 view : Model -> Html Msg
 view model =
     div [ class "center mt5 pa2 ba br4", style "width" "max-content" ]
@@ -62,6 +57,6 @@ main =
     Browser.element
         { init = init
         , update = update
-        , subscriptions = subscriptions
+        , subscriptions = \_ -> Sub.none
         , view = view
         }
