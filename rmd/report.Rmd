@@ -32,7 +32,7 @@ theme_set(
 # filename = list.files(pattern="*.tsv") |> max()
 filename = "..."
 
-d <- read_tsv(filename, col_names=c("...", "...")  # => cols(...)
+d <- read_tsv(filename, col_names=c("...", "..."))  # => cols(...)
 
 d |> spec()
 d |> spec() |> cols_condense()
