@@ -1,0 +1,11 @@
+
+digraph {
+  rankdir=LR;
+  node [style="filled,rounded", shape=box, fontname=Arial, fontsize=14];
+  graph [overlap=false; splines=true];
+
+  a -> b;
+  a -> c;
+  b -> d;
+}
+
