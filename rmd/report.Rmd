@@ -34,20 +34,22 @@ theme_set(
 filename = "..."
 
 # -------------------------------------------------
+
 # temporary: upgrade to next block
-d <- read_tsv(filename, col_names=c("...", "...")  # => cols(...)
+d <- read_tsv(filename, col_names=c("...", "..."))
 d |> spec()
 d |> spec() |> cols_condense()
+
 # -------------------------------------------------
 
-d <- read_tsv(filename, col_names=c("...", "..."),
+d <- read_tsv(filename,
+       col_names=c("...", "..."),
        col_types=cols(
          "..." = col_datetime(),
          "..." = col_character(),
          "..." = col_factor(),
          "..." = col_number(),
-     )
-)
+     ))
 
 ```
 
