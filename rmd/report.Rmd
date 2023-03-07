@@ -13,14 +13,13 @@ knitr::opts_chunk$set(
   comment=""
 )
 
-library(tidyverse)
-library(lubridate)
-# library(scales)    --- often, but not always
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(lubridate))
+suppressPackageStartupMessages(library(scales))
 
 theme_set(
   theme_bw() +
   theme(
-    # axis.title.x=element_blank(),
     panel.grid.minor=element_blank()
   )
 )
