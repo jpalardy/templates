@@ -1,8 +1,15 @@
 
 digraph {
   rankdir=LR;
-  node [style="filled,rounded", shape=box, fontname=Arial, fontsize=14];
-  graph [overlap=false; splines=true];
+  node [style="filled,rounded", shape=box, fontname=Courier, fontsize=14];
+  graph [overlap=false; splines=true; fontname=Arial];
+  edge [fontname=Arial; fontsize=9];
+
+  subgraph cluster_ts {
+    label = "grouping text";
+    x -> y;
+  }
+  y -> c;
 
   a -> b;
   a -> c;
