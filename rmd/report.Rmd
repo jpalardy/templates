@@ -55,7 +55,7 @@ d <- read_tsv(filename,
 ```{r}
 
 ggplot(d, aes(...)) +
-  geom_point() +
+  geom_point(alpha=0.3, color="darkgreen", stroke=0, size=2.5) +
   NULL
 
 ```
