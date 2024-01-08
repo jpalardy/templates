@@ -1,0 +1,17 @@
+# https://gist.github.com/ju2wheels/3d1a1dfa498977874d03
+# https://docs.docker.com/engine/reference/builder/
+FROM node:latest
+
+WORKDIR /workdir
+
+COPY package*.json .
+RUN npm install --production
+
+COPY src src
+
+ENV NODE_ENV production
+ENV PORT 3000
+
+EXPOSE 3000
+
+CMD ["npm", "test"]

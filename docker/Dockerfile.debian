@@ -1,0 +1,19 @@
+FROM public.ecr.aws/debian/debian:bullseye
+
+RUN apt update
+RUN apt install -y vim
+
+COPY <<-"EOT" /root/.vimrc
+syntax on
+set hlsearch
+set incsearch
+set ignorecase
+set nowrap
+EOT
+
+COPY <<-"EOT" /root/.bashrc
+alias ls='ls --color=auto'
+alias ll='ls -l'
+EOT
+
+WORKDIR /workdir
