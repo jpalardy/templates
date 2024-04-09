@@ -2,8 +2,6 @@
 RMDs = $(wildcard *.Rmd)
 HTMLs = $(RMDs:.Rmd=.html)
 
-TSVs = $(wildcard *.tsv)
-
 # -------------------------------------------------
 
 .PHONY: build
@@ -15,6 +13,6 @@ clean:
 
 # -------------------------------------------------
 
-%.html: %.Rmd $(TSVs)
+%.html: %.Rmd
 	R --vanilla --quiet -e 'rmarkdown::render("$<")'
 
