@@ -9,7 +9,7 @@ build: $(OUTPUT)
 
 .PHONY: watch
 watch:
-	ls $(ELMs) | entr -c -s 'make -s; ding'
+	ls $(ELMs) | entr -c -s 'ding make -s'
 
 .PHONY: clean
 clean:

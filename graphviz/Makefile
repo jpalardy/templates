@@ -9,7 +9,7 @@ all: $(PNGs)
 
 .PHONY: watch
 watch:
-	echo $(DOTs) | entr make
+	echo $(DOTs) | entr -c -s 'ding make'
 
 .PHONY: clean
 clean:

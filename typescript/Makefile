@@ -5,5 +5,5 @@ bootstrap:
 
 .PHONY: compile
 compile:
-	npx tsc
+	npm exec -- tsc
 
