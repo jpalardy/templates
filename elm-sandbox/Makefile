@@ -18,5 +18,5 @@ clean:
 # -------------------------------------------------
 
 $(OUTPUT): $(ELMs)
-	elm make $^ --output $@
+	npm exec -- elm make $^ --output $@
 
