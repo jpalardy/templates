@@ -5,7 +5,7 @@ OUTPUT = public/js/app.js
 # -------------------------------------------------
 
 .PHONY: optimize
-optimize: node_modules tailwind-build
+optimize: node_modules test review tailwind-build
 	npm exec -- elm make src/Main.elm --optimize --output $(OUTPUT)
 	npm exec -- uglifyjs $(OUTPUT) --compress 'pure_funcs=[F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9],pure_getters,keep_fargs=false,unsafe_comps,unsafe' | npm exec -- uglifyjs --mangle --output $(OUTPUT)
 
@@ -23,6 +23,10 @@ watch:
 .PHONY: test
 test: node_modules
 	npm exec -- elm-test
+
+.PHONY: review
+review: node_modules
+	npm exec -- elm-review
 
 .PHONY: clean
 clean:
