@@ -1,9 +1,9 @@
 module Main exposing (main)
 
 import Browser
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Html.Events exposing (..)
+import Html exposing (Html)
+import Html.Attributes as HA
+import Html.Events as HE
 import Http
 import Json.Decode as Decode
 
@@ -62,10 +62,18 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div [ class "center mt5 pa2 ba br4", style "width" "max-content" ]
-        [ button [ onClick Decrement ] [ text "-" ]
-        , span [ class "pa2" ] [ text (String.fromInt model.value) ]
-        , button [ onClick Increment ] [ text "+" ]
+    let
+        btn text event =
+            Html.button
+                [ HA.class "px-2 py-1 border rounded bg-gray-200 hover:bg-gray-300"
+                , HE.onClick event
+                ]
+                [ Html.text text ]
+    in
+    Html.div [ HA.class "w-fit mx-auto mt-9 p-2 border rounded" ]
+        [ btn "-" Decrement
+        , Html.span [ HA.class "inline-block text-center p-2 w-[3rem]" ] [ Html.text (String.fromInt model.value) ]
+        , btn "+" Increment
         ]
 
 
