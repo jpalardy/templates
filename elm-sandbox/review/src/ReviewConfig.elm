@@ -85,8 +85,8 @@ configCamelCase =
 configImports : List Rule
 configImports =
     [ NoInconsistentAliases.config
-        [ ( "Json.Decode", "Decode" )
-        , ( "Json.Encode", "Encode" )
+        [ ( "Html.Attributes", "HA" )
+        , ( "Html.Events", "HE" )
         ]
         |> NoInconsistentAliases.noMissingAliases
         |> NoInconsistentAliases.rule
