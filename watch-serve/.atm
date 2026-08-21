@@ -1,0 +1,10 @@
+tmux rename-window "_build_"
+tmux send-keys "make watch" C-m
+
+tmux split-window -h
+tmux send-keys "cd public; serve" C-m
+
+split-window -h
+send-keys "make tailwind" C-m
+
+tmux select-layout even-vertical
