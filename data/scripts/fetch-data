@@ -1,0 +1,4 @@
+#!/bin/bash
+
+curl -s https://bookpiles.ca/jonathan/books.json -o -
+
