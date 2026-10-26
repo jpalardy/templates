@@ -26,3 +26,6 @@ clean:
 purge: clean
 	rm -rf *.png *.json
 
+dependencies:
+	brew ls | rg @ | xargs brew uses --installed --recursive
+
