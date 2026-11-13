@@ -4,8 +4,7 @@ title: "UNTITLED"
 
 ```{r}
 #| include: false
-
-library(tidyverse)
+library(tidyverse) |> suppressPackageStartupMessages()
 
 theme_set(
   theme_bw() +
@@ -13,28 +12,22 @@ theme_set(
       panel.grid.minor = element_blank()
     )
 )
-
 ```
 
 ## Load and Clean Data
 
 ```{r}
-
 d <- read_tsv("data/data.tsv")
-
 ```
 
 ## First Plot
 
 ```{r}
-
 d |>
-  # filter(...) |>
   ggplot(aes(x, y)) +
   geom_point(alpha = 0.3, color = "darkgreen", stroke = 0, size = 2.5) +
   # scale_x_datetime(date_breaks = "1 week", date_labels = "%m/%d") +
   scale_y_continuous(labels = scales::label_comma()) +
   expand_limits(y = 0) +
   NULL
-
 ```
